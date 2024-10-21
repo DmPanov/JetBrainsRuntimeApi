@@ -196,3 +196,8 @@ $JAR --create --file="$JAVADOC_OUT" -C "$OUT/javadoc" . || {
 
 # When reading message.txt, redirect stderr to /dev/null just in case file doesn't exist.
 #echo "`cat "$OUT/message.txt" 2> /dev/null`"
+
+echo "Calculating checksums"
+sha256sum -b "${JAR_OUT}" > "${JAR_OUT}.sha256"
+sha256sum -b "${SOURCES_OUT}" > "${SOURCES_OUT}.sha256"
+sha256sum -b "${JAVADOC_OUT}" > "${JAVADOC_OUT}.sha256"

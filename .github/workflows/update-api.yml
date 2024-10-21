@@ -84,6 +84,9 @@ jobs:
             out/jbr-api-${{steps.build.outputs.API_VERSION}}.jar
             out/jbr-api-${{steps.build.outputs.API_VERSION}}-sources.jar
             out/jbr-api-${{steps.build.outputs.API_VERSION}}-javadoc.jar
+            out/jbr-api-${{steps.build.outputs.API_VERSION}}.jar.sha256
+            out/jbr-api-${{steps.build.outputs.API_VERSION}}-sources.jar.sha256
+            out/jbr-api-${{steps.build.outputs.API_VERSION}}-javadoc.jar.sha256
       - name: Push update
         if: ${{steps.build.outputs.PUSH}}
         env:
